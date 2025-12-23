@@ -8,7 +8,7 @@ const ProductDetails = async ({ params }) => {
     const { id } = await params;
     const product = await getSingleProducts(id)
 
-  if (!product || Object.keys(product).length === 0) {
+  if (!product || Object.keys(product)?.length === 0) {
     return notFound();
   }
 
@@ -79,7 +79,7 @@ const ProductDetails = async ({ params }) => {
         <div className="mb-6">
           <h3 className="font-semibold mb-2">Key Features</h3>
           <ul className="list-disc list-inside space-y-1 text-sm">
-            {info.map((item, i) => (
+            {info?.map((item, i) => (
               <li key={i}>{item}</li>
             ))}
           </ul>
@@ -98,7 +98,7 @@ const ProductDetails = async ({ params }) => {
       <div className="md:col-span-2">
         <h3 className="text-lg font-semibold mb-3">Questions & Answers</h3>
         <div className="space-y-3">
-          {qna.map((item, i) => (
+          {qna?.map((item, i) => (
             <div key={i} className="collapse collapse-arrow border">
               <input type="checkbox" />
               <div className="collapse-title font-medium">{item.question}</div>
