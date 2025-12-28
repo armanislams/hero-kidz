@@ -11,7 +11,7 @@ const Products = async () => {
 
       <div className="grid md:grid-cols-3 gap-5">
         {products.map((product) => (
-          <ProductCard key={product.title} product={product}></ProductCard>
+          <ProductCard key={product.title} product={{...product, _id: product._id.toString()}}></ProductCard>
         ))}
       </div>
     </div>
